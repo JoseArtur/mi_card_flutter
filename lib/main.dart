@@ -1,27 +1,51 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-  MyApp()
-  );
+  runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.teal,
         body: SafeArea(
-         child:Container(  // A container only allows one widget
-           height: 100.0,
-           width: 100.0,
-           padding: EdgeInsets.all(20), //Padding is the inside of the widget
-           margin:EdgeInsets.only(left:30), //Margin is the outside of the widget
-           color: Colors.white,
-           child:Text('Hello'
-         )
-        ),
-      ),
+            child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              // A container only allows one widget
+
+              height: 100.0,
+              width: 100.0,
+              color: Colors.red,
+            ),
+            SizedBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                   Container(
+                    color:Colors.yellow,
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    color:Colors.green,
+                    width: 100,
+                    height: 100,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              // A container only allows one widget
+              width: 100.0,
+              color: Colors.blue,
+            ),
+          ],
+        )),
       ),
     );
   }
